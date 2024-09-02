@@ -1,4 +1,8 @@
-use std::{sync::{mpsc, Arc}, thread, time::Duration};
+use std::{
+    sync::{mpsc, Arc},
+    thread,
+    time::Duration,
+};
 
 struct Queue {
     length: u32,

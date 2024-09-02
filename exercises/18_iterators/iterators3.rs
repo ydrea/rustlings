@@ -12,7 +12,7 @@ enum DivisionError {
 // Otherwise, return a suitable error.
 fn divide(a: i64, b: i64) -> Result<i64, DivisionError> {
     if b == 0 {
-        return Err(DivisionError::DivideByZero)
+        return Err(DivisionError::DivideByZero);
     } else {
         let moduluszero = a % b == 0;
         let rez = a / b;

@@ -1,17 +1,15 @@
 fn trim_me(input: &str) -> &str {
-let i =input.trim();
-i
+    let i = input.trim();
+    i
 }
 
 fn compose_me(input: &str) -> String {
-let s1=" world!";
-format!("{}{}", input, s1)
-
-
+    let s1 = " world!";
+    format!("{}{}", input, s1)
 }
 
 fn replace_me(input: &str) -> String {
-    input.replace("cars", "balloons")// TODO: Replace "cars" in the string with "balloons".
+    input.replace("cars", "balloons") // TODO: Replace "cars" in the string with "balloons".
 }
 
 fn main() {

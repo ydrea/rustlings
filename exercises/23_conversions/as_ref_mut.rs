@@ -4,20 +4,30 @@
 
 // Obtain the number of bytes (not characters) in the given argument.
 // TODO: Add the `AsRef` trait appropriately as a trait bound.
-fn byte_counter<T>(arg: T) -> usize {
+fn byte_counter<T: AsRef<str>>(arg: T) -> usize {
     arg.as_ref().as_bytes().len()
 }
 
 // Obtain the number of characters (not bytes) in the given argument.
 // TODO: Add the `AsRef` trait appropriately as a trait bound.
-fn char_counter<T>(arg: T) -> usize {
+fn char_counter<T: AsRef<str>>(arg: T) -> usize {
     arg.as_ref().chars().count()
 }
 
 // Squares a number using `as_mut()`.
+use std::ops::Mul;
 // TODO: Add the appropriate trait bound.
-fn num_sq<T>(arg: &mut T) {
+fn num_sq<T,U>(arg: &mut T) 
     // TODO: Implement the function body.
+    where
+    T: AsMut<U>,
+    U: Copy + Mul<Output = U>,
+{
+    // Obtain a mutable reference to the inner numeric type using `as_mut`.
+    let inner: &mut U = arg.as_mut();
+    
+    // Square the number by multiplying it by itself.
+    *inner = *inner * *inner;
 }
 
 fn main() {

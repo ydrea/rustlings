@@ -2,7 +2,11 @@
 // work. But this time, the spawned threads need to be in charge of updating a
 // shared value: `JobStatus.jobs_done`
 
-use std::{sync::{Arc, Mutex}, thread, time::Duration};
+use std::{
+    sync::{Arc, Mutex},
+    thread,
+    time::Duration,
+};
 
 struct JobStatus {
     jobs_done: u32,

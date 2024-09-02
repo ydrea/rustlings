@@ -12,7 +12,8 @@ fn abs_all<'a, 'b>(input: &'a mut Cow<'b, [i32]>) -> &'a mut Cow<'b, [i32]> {
             // Clones into a vector if not already owned.
             input.to_mut()[i] = -value;
         }
-    }input
+    }
+    input
 }
 
 fn main() {
@@ -36,7 +37,7 @@ mod tests {
         }
     }
     #[test]
-    
+
     fn owned_no_mutation() -> Result<(), &'static str> {
         // We can also pass `slice` without `&` so Cow owns it directly. In this
         // case no mutation occurs and thus also no clone, but the result is

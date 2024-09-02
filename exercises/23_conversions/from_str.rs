@@ -50,17 +50,20 @@ impl FromStr for Person {
     type Err = ParsePersonError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        let v=s.split(",").collect::<Vec<&str>>();
+        let v = s.split(",").collect::<Vec<&str>>();
         if v.len() != 2 {
-         Err(   ParsePersonError::BadLen)?
-        } if v[0].is_empty(){
-         Err(   ParsePersonError::NoName)?
+            Err(ParsePersonError::BadLen)?
         }
-        let age= v[1].parse::<u8>()?;
-        Ok(Person{name: v[0].to_string(), age})
+        if v[0].is_empty() {
+            Err(ParsePersonError::NoName)?
         }
-    } 
-
+        let age = v[1].parse::<u8>()?;
+        Ok(Person {
+            name: v[0].to_string(),
+            age,
+        })
+    }
+}
 
 fn main() {
     let p = "Mark,20".parse::<Person>();

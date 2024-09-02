@@ -26,20 +26,20 @@ fn build_scores_table(results: &str) -> HashMap<&str, Team> {
         let team_2_name = split_iterator.next().unwrap();
         let team_1_score: u8 = split_iterator.next().unwrap().parse().unwrap();
         let team_2_score: u8 = split_iterator.next().unwrap().parse().unwrap();
-// team_1.
-let t1 = scores.entry(team_1_name.clone()).or_insert(Team {
-    goals_scored: 0,
-    goals_conceded: 0,
-});
-(*t1).goals_scored += team_1_score;
-(*t1).goals_conceded += team_2_score;
+        // team_1.
+        let t1 = scores.entry(team_1_name.clone()).or_insert(Team {
+            goals_scored: 0,
+            goals_conceded: 0,
+        });
+        (*t1).goals_scored += team_1_score;
+        (*t1).goals_conceded += team_2_score;
 
-let t2 = scores.entry(team_2_name.clone()).or_insert(Team {
-    goals_scored: 0,
-    goals_conceded: 0,
-});
-(*t2).goals_conceded += team_1_score;
-(*t2).goals_scored += team_2_score;
+        let t2 = scores.entry(team_2_name.clone()).or_insert(Team {
+            goals_scored: 0,
+            goals_conceded: 0,
+        });
+        (*t2).goals_conceded += team_1_score;
+        (*t2).goals_scored += team_2_score;
 
         // TODO: Populate the scores table with the extracted details.
         // Keep in mind that goals scored by team 1 will be the number of goals

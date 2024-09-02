@@ -29,19 +29,18 @@ mod my_module {
     use super::Command;
 
     // TODO: Complete the function.
-    pub fn transformer(input: Vec<(String, Command)>) -> Vec<String> { 
+    pub fn transformer(input: Vec<(String, Command)>) -> Vec<String> {
         let mut output = vec![];
         for (string, command) in input {
-          let s = match command {
+            let s = match command {
                 Command::Uppercase => string.to_uppercase(),
                 Command::Trim => string.trim().into(),
                 Command::Append(count) => string + &"bar".repeat(count),
-               
             };
 
             output.push(s);
-                }
-output
+        }
+        output
     }
 }
 

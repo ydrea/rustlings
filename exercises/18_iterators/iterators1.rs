@@ -16,9 +16,9 @@ mod tests {
 
         // TODO: Create an iterator over the array.
         let mut fav_fruits_iterator = my_fav_fruits.iter();
-// for i in fav_fruits_iterator{
-//     println!("{i}")
-// };
+        // for i in fav_fruits_iterator{
+        //     println!("{i}")
+        // };
         assert_eq!(fav_fruits_iterator.next(), Some(&"banana"));
         assert_eq!(fav_fruits_iterator.next(), Some(&"custard apple")); // TODO: Replace `todo!()`
         assert_eq!(fav_fruits_iterator.next(), Some(&"avocado"));

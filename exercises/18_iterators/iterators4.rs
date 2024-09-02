@@ -2,7 +2,7 @@ fn factorial(num: u64) -> u64 {
     if num == 0 {
         1
     } else {
-        num * factorial(num-1)
+        num * factorial(num - 1)
     }
     // TODO: Complete this function to return the factorial of `num` which is
     // defined as `1 * 2 * 3 * … * num`.

@@ -8,7 +8,6 @@ trait Licensed {
     fn licensing_info(&self) -> String {
         String::from("Default license")
     }
-
 }
 
 struct SomeSoftware {
